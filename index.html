@@ -14,7 +14,7 @@
 <body>
     <header>
         <nav>
-            <div id="navegacao" class="p-4 border bg-yellow-500">
+            <div id="navegacao" class="p-4 bg-yellow-500">
                 <div id="menu-visivel" class="w-full flex justify-between items-center border-orange-500 border border-blue-500">
                     <div id="logomarca" class="w-1/2  border border-orange-500">
                         <img src="imgs/logo.png" alt="Logomarca Finans" class="w-36">
@@ -40,8 +40,18 @@
                 </div><!-- #lista-menu-->
             </div><!-- #navegacao-->
         </nav>
-        <div id="cabecalho">
-            
+        <div id="cabecalho" class="p-4 bg-yellow-500">
+            <h1 class="my-4 text-4xl text-white">Suas contas, descomplicadas</h1>
+            <p class="my-4 text-md text-white">Usado por mais de 1 milhão de pessoas, o Finans é uma ferramenta online que vai facilitar sua vida financeira.</p>
+            <div id="cadastro" class="flex my-4">
+                <input type="email" name="seu-email" id="seu-email" class="w-3/5 py-1 px-3 outline-none rounded-l-md border border-slate-300" placeholder="Digite seu e-mail">
+                <button type="button" id="cadastre-se" class="py-1 px-3 rounded-r-md bg-blue-600 text-white font-medium">Cadastre-se</button>
+            </div>
+            <p>
+                Disponível para 
+                <span id="android"><i class="fa-brands fa-android"></i></span>
+                <span id="ios"><i class="fa-brands fa-apple"></i></span>
+            </p>
         </div><!--#cabecalho -->
     </header>
     <script src="script/script.js"></script>
