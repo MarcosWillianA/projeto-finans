@@ -4,12 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-
     <title>Finans - Finanças Pessoais</title>
 </head>
 <body>
-    
+    <header>
+        <nav>
+            <div id="navegacao" class="p-4 border bg-yellow-500">
+                <div id="menu-visivel" class="w-full flex justify-between items-center border-orange-500 border border-blue-500">
+                    <div id="logomarca" class="w-1/2  border border-orange-500">
+                        <img src="imgs/logo.png" alt="Logomarca Finans" class="w-36">
+                    </div>
+                    <div id="menu">
+                        <button type="button" id="botao-menu" class="px-4 py-2 rounded border border-yellow-800">
+                            <i class="fa-solid fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="lista-menu" class="hidden opacity-0 transition-opacity duration-500 ease-in-out">
+                    <ul>
+                        <li class="py-2 text-yellow-800 hover:text-black"><a href="#">Home</a></li>
+                        <li class="py-2 text-yellow-800 hover:text-black"><a href="#">Recursos</a></li>
+                        <li class="py-2 text-yellow-800 hover:text-black"><a href="#">Benefícios</a></li>
+                        <li class="py-2 text-yellow-800 hover:text-black"><a href="#">Preços</a></li>
+                        <li class="py-2">
+                            <button type="button" id="botao-entrar" class="p-2 rounded border border-white transition-all duration-500 ease-in-out hover:bg-white hover:text-black text-white font-medium">
+                                Entrar
+                            </button>
+                        </li>
+                    </ul>
+                </div><!-- #lista-menu-->
+            </div><!-- #navegacao-->
+        </nav>
+        <div id="cabecalho">
+            
+        </div><!--#cabecalho -->
+    </header>
+    <script src="script/script.js"></script>
 </body>
 </html>
