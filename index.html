@@ -9,54 +9,76 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Linkando as configurações do Tailwind diretamente
+        tailwind.config = {
+          theme: {
+            extend: {
+              screens: {
+                'custom-656': '656px',
+              },
+            },
+          },
+        };
+      </script>
     <title>Finans - Finanças Pessoais</title>
 </head>
-<body>
+<body class="bg-slate-200">
     <header>
         <nav>
-            <div id="navegacao" class="p-4 bg-yellow-500">
+            <div id="navegacao" class="max-w-7xl m-auto p-4 bg-yellow-500">
                 <div id="menu-visivel" class="w-full flex justify-between items-center">
-                    <div id="logomarca" class="w-1/2">
+                    <div id="logomarca" class="self-start w-1/2">
                         <img src="imgs/logo.png" alt="Logomarca Finans" class="w-36">
                     </div>
-                    <div id="menu">
-                        <button type="button" id="botao-menu" class="px-4 py-2 rounded border border-yellow-800 text-yellow-800">
-                            <i class="fa-solid fa-bars text-xl"></i>
+                    <div id="menu" class="relative">
+                        <!-- Botão do menu (hambúrguer) -->
+                        <button type="button" id="botao-menu" class="block custom-656:hidden px-4 py-2 rounded border border-yellow-800 text-yellow-800">
+                          <i class="fa-solid fa-bars text-xl"></i>
                         </button>
-                    </div>
-                </div>
-                <div id="lista-menu" class="hidden opacity-0 transition-opacity duration-500 ease-in-out">
-                    <ul>
-                        <li class="py-2 text-yellow-800 hover:text-black"><a href="#">Home</a></li>
-                        <li class="py-2 text-yellow-800 hover:text-black"><a href="#">Recursos</a></li>
-                        <li class="py-2 text-yellow-800 hover:text-black"><a href="#">Benefícios</a></li>
-                        <li class="py-2 text-yellow-800 hover:text-black"><a href="#">Preços</a></li>
-                        <li class="py-2">
+                      
+                        <!-- Menu em linha ou escondido -->
+                        <ul
+                          id="lista-menu"
+                          class="hidden absolute right-0 top-full flex-col bg-yellow-500 p-4 rounded-md shadow-lg custom-656:relative custom-656:top-0 custom-656:right-auto custom-656:flex custom-656:flex-row custom-656:space-x-4 custom-656:p-0 custom-656:bg-transparent custom-656:shadow-none">
+                          <li class="py-2 text-yellow-800 hover:text-black"><a href="#">Home</a></li>
+                          <li class="py-2 text-yellow-800 hover:text-black"><a href="#">Recursos</a></li>
+                          <li class="py-2 text-yellow-800 hover:text-black"><a href="#">Benefícios</a></li>
+                          <li class="py-2 text-yellow-800 hover:text-black"><a href="#">Preços</a></li>
+                          <li class="py-2">
                             <button type="button" id="botao-entrar" class="p-2 rounded border border-white transition-all duration-500 ease-in-out hover:bg-white hover:text-black text-white font-medium">
-                                Entrar
+                              Entrar
                             </button>
-                        </li>
-                    </ul>
-                </div><!-- #lista-menu-->
+                          </li>
+                        </ul>
+                      </div>
+                      
+                </div><!--menu-visivel-->
+                
             </div><!-- #navegacao-->
         </nav>
-        <div id="cabecalho" class="p-4 bg-yellow-500">
-            <h1 class="my-4 text-4xl text-white">Suas contas, descomplicadas</h1>
-            <p class="my-4 text-md text-white">Usado por mais de 1 milhão de pessoas, o Finans é uma ferramenta online que vai facilitar sua vida financeira.</p>
-            <div id="cadastro" class="flex my-4">
-                <input type="email" name="seu-email" id="seu-email" class="w-3/5 py-1 px-3 outline-none rounded-l-md border border-slate-300" placeholder="Digite seu e-mail">
-                <button type="button" id="cadastre-se" class="py-1 px-3 rounded-r-md bg-blue-600 text-white font-medium">Cadastre-se</button>
+        <div id="cabecalho" class="flex max-w-7xl m-auto pl-4 pr-4 pt-4 bg-yellow-500">
+            <div id="apresentacao" class="max-w-sm">
+                <h1 class="my-4 text-4xl text-white">Suas contas, descomplicadas</h1>
+                <p class="my-4 text-md text-white">Usado por mais de 1 milhão de pessoas, o Finans é uma ferramenta online que vai facilitar sua vida financeira.</p>
+                <div id="cadastro" class="flex my-4">
+                    <input type="email" name="seu-email" id="seu-email" class="w-3/5 py-1 px-3 outline-none rounded-l-md border border-slate-300" placeholder="Digite seu e-mail">
+                    <button type="button" id="cadastre-se" class="py-1 px-3 rounded-r-md bg-blue-600 text-white font-medium">Cadastre-se</button>
+                </div>
+                <p class="my-4 text-white">
+                    Disponível para
+                    <span id="android" class=" p-2 rounded border border-white"><i class="fa-brands fa-android"></i></span>
+                    <span id="ios" class=" px-2.5 py-2 rounded border border-white"><i class="fa-brands fa-apple"></i></span>
+                </p>
+            </div><!--Apresentação-->
+            <div id="imagem-loira" class="hidden w-1/2 border border-red-500 custom-656:flex justify-center">
+                <img src="imgs/capa-mulher.png" alt="Loira com moeda" class="text-center">
             </div>
-            <p class="text-white">
-                Disponível para 
-                <span id="android" class=" p-2 rounded border border-white"><i class="fa-brands fa-android"></i></span>
-                <span id="ios" class=" px-2.5 py-2 rounded border border-white"><i class="fa-brands fa-apple"></i></span>
-            </p>
         </div><!--#cabecalho -->
     </header><!-- header -->
     <main>
         <section>
-            <div id="saiba-dinheiro" class="p-4">
+            <div id="saiba-dinheiro" class="max-w-7xl m-auto p-4 bg-white">
                 <h2 class="my-4 text-2xl font-bold">Saiba para onde vai o seu dinheiro</h2>
                 <p class="my-4 text-sm">Com o Finans, você categoriza todos os seus lançamentos. Com gráficos simples, você sabe de onde vem e para onde vai o seu dinheiro.</p>
                 <button type="button" class="my-4 px-4 py-1 rounded-md bg-blue-600 text-white">
@@ -68,7 +90,7 @@
             </div><!--#saiba-dinheiro-->
         </section>
         <section>
-            <div id="economize" class="p-4 border-t border-slate-300">
+            <div id="economize" class="max-w-7xl m-auto p-4 border-t border-slate-300">
                 <div id="imagem-juros" class="hidden">
                     <img src="imgs/juros.png" alt="Pare de pagar juros">
                 </div>
@@ -78,8 +100,8 @@
             </div><!-- #economize-->
         </section>
         <section>
-            <div id="vantagens" class="p-4 border-t border-slate-300">
-                <div id="facil-usar">
+            <div id="vantagens" class="flex flex-wrap max-w-7xl m-auto p-4 border-t border-slate-300 bg-white">
+                <div id="facil-usar" class="max-w-80">
                     <div id="imagem-facil-usar">
                         <img src="imgs/facil.png" alt="Fácil de Usar">
                     </div>
@@ -88,7 +110,7 @@
                         O Finans vai além do básico e permite que você faça controles incríveis, essencias para suas finanças. Simples como tem que ser!
                     </p>
                 </div><!--#facil-usar-->
-                <div id="economize-tempo">
+                <div id="economize-tempo" class="max-w-80">
                     <div id="imagem-economize">
                         <img src="imgs/economize.png" alt="Economize seu tempo">
                     </div>
@@ -97,7 +119,7 @@
                         Tempo é dinheiro! Em segundos, você tem tudo sob controle e paroveite seu tempo com o que realmente importa pra você!
                     </p>
                 </div><!--#economize-tempo -->
-                <div id="suporte-amigo">
+                <div id="suporte-amigo" class="max-w-80">
                     <div id="imagem-suporte">
                         <img src="imgs/suporte.png" alt="Suporte amigo">
                     </div>
@@ -110,25 +132,29 @@
         </section>
     </main>
     <footer>
-        <div id="rodape" class="flex p-4 bg-yellow-500">
-            <div id="menu-rodape" class="w-1/2">
-                <ul>
-                    <li class="py-2 text-yellow-800 hover:text-black"><a href="">Home</a></li>
-                    <li class="py-2 text-yellow-800 hover:text-black"><a href="">Recursos</a></li>
-                    <li class="py-2 text-yellow-800 hover:text-black"><a href="">Benefícios</a></li>
-                    <li class="py-2 text-yellow-800 hover:text-black"><a href="">Preços</a></li>
-                </ul>
-            </div>
-            <div id="redes-sociais" class="w-1/2">
-                <ul>
-                    <li class="py-2 text-right"><a href="#" class="flex justify-end"><span class="block w-8 h-8 rounded border border-white transition-all duration-500 ease-in-out hover:bg-white hover:text-black text-xl text-white text-center"><i class="fa-brands fa-facebook"></span></i></a></li>
-                    <li class="py-2 text-right"><a href="#" class="flex justify-end"><span class="block w-8 h-8 rounded border border-white transition-all duration-500 ease-in-out hover:bg-white hover:text-black text-xl text-white text-center"><i class="fa-brands fa-instagram"></span></i></a></li>
-                    <li class="py-2 text-right"><a href="#" class="flex justify-end"><span class="block w-8 h-8 rounded border border-white transition-all duration-500 ease-in-out hover:bg-white hover:text-black text-xl text-white text-center"><i class="fa-brands fa-x-twitter"></span></i></a></li>
-                    <li class="py-2 text-right"><a href="#" class="flex justify-end"><span class="block w-8 h-8 rounded border border-white transition-all duration-500 ease-in-out hover:bg-white hover:text-black text-xl text-white text-center"><i class="fa-brands fa-youtube"></span></i></a></li>
-                </ul>
-            </div>
+        <div id="rodape" class="flex flex-col items-center max-w-7xl m-auto p-4 bg-yellow-500 custom-656:flex-row custom-656:justify-between">
+          <!-- Menu de navegação no rodapé -->
+          <div id="menu-rodape" class="w-full custom-656:w-auto text-left">
+            <ul class="flex flex-col custom-656:flex-row custom-656:space-x-6">
+              <li class="py-2 text-yellow-800 hover:text-black"><a href="#">Home</a></li>
+              <li class="py-2 text-yellow-800 hover:text-black"><a href="#">Recursos</a></li>
+              <li class="py-2 text-yellow-800 hover:text-black"><a href="#">Benefícios</a></li>
+              <li class="py-2 text-yellow-800 hover:text-black"><a href="#">Preços</a></li>
+            </ul>
+          </div>
+      
+          <!-- Redes sociais no rodapé -->
+          <div id="redes-sociais" class="w-full custom-656:w-auto text-right mt-4 custom-656:mt-0">
+            <ul class="flex flex-col custom-656:flex-row custom-656:space-x-4">
+              <li class="py-2"><a href="#" class="block w-8 h-8 rounded border border-white transition-all duration-500 ease-in-out hover:bg-white hover:text-black text-xl text-white text-center"><i class="fa-brands fa-facebook"></i></a></li>
+              <li class="py-2"><a href="#" class="block w-8 h-8 rounded border border-white transition-all duration-500 ease-in-out hover:bg-white hover:text-black text-xl text-white text-center"><i class="fa-brands fa-instagram"></i></a></li>
+              <li class="py-2"><a href="#" class="block w-8 h-8 rounded border border-white transition-all duration-500 ease-in-out hover:bg-white hover:text-black text-xl text-white text-center"><i class="fa-brands fa-x-twitter"></i></a></li>
+              <li class="py-2"><a href="#" class="block w-8 h-8 rounded border border-white transition-all duration-500 ease-in-out hover:bg-white hover:text-black text-xl text-white text-center"><i class="fa-brands fa-youtube"></i></a></li>
+            </ul>
+          </div>
         </div>
-    </footer>
+      </footer>
+      
     <script src="script/script.js"></script>
 </body>
 </html>
