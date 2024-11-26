@@ -16,6 +16,7 @@
             extend: {
               screens: {
                 'custom-656': '656px',
+                'custom-740': '740px',
               },
             },
           },
@@ -71,32 +72,36 @@
                     <span id="ios" class=" px-2.5 py-2 rounded border border-white"><i class="fa-brands fa-apple"></i></span>
                 </p>
             </div><!--Apresentação-->
-            <div id="imagem-loira" class="hidden w-1/2 border border-red-500 custom-656:flex justify-center">
+            <div id="imagem-loira" class="hidden w-1/2 custom-656:flex justify-center">
                 <img src="imgs/capa-mulher.png" alt="Loira com moeda" class="text-center">
             </div>
         </div><!--#cabecalho -->
     </header><!-- header -->
     <main>
         <section>
-            <div id="saiba-dinheiro" class="max-w-7xl m-auto p-4 bg-white">
-                <h2 class="my-4 text-2xl font-bold">Saiba para onde vai o seu dinheiro</h2>
-                <p class="my-4 text-sm">Com o Finans, você categoriza todos os seus lançamentos. Com gráficos simples, você sabe de onde vem e para onde vai o seu dinheiro.</p>
-                <button type="button" class="my-4 px-4 py-1 rounded-md bg-blue-600 text-white">
-                    Veja mais
-                </button>
-                <div id="imagem-saiba">
+            <div id="saiba-dinheiro" class="flex flex-wrap justify-evenly gap-5 max-w-7xl m-auto p-4 border border-red-500 bg-white">
+                <div id="dinheiro-explicacao" class="min-w-72 max-w-md">
+                    <h2 class="my-4 text-2xl font-bold">Saiba para onde vai o seu dinheiro</h2>
+                    <p class="my-4 text-sm">Com o Finans, você categoriza todos os seus lançamentos. Com gráficos simples, você sabe de onde vem e para onde vai o seu dinheiro.</p>
+                    <button type="button" class="my-4 px-4 py-1 rounded-md bg-blue-600 text-white">
+                        Veja mais
+                    </button>
+                </div>
+                <div id="imagem-saiba" class="min-w-72 max-w-md">
                     <img src="imgs/saiba.png" alt="Saiba para onde vai seu dinheiro">
                 </div>
             </div><!--#saiba-dinheiro-->
         </section>
         <section>
-            <div id="economize" class="max-w-7xl m-auto p-4 border-t border-slate-300">
-                <div id="imagem-juros" class="hidden">
+            <div id="economize" class="flex flex-wrap justify-evenly max-w-7xl m-auto p-4 border-t border-slate-300 bg-white">
+                <div id="imagem-juros" class="hidden custom-740:block min-w-36 max-w-80">
                     <img src="imgs/juros.png" alt="Pare de pagar juros">
                 </div>
-                <h2 class="my-4 text-2xl font-bold">Pare de pagar juros e economize</h2>
-                <p class="my-4 text-sm">Manter as contas em dia é sempre um problema? O Finans avisa você: receba alertas de contas a pagar e a receber!</p>
-                <button type="button" class="my-4 px-4 py-1 rounded-md bg-blue-600 text-white">Veja mais</button>
+                <div id="economize-explicacao" class="min-w-72 max-w-sm p-4">
+                    <h2 class="my-4 text-2xl font-bold">Pare de pagar juros e economize</h2>
+                    <p class="my-4 text-sm">Manter as contas em dia é sempre um problema? O Finans avisa você: receba alertas de contas a pagar e a receber!</p>
+                    <button type="button" class="my-4 px-4 py-1 rounded-md bg-blue-600 text-white">Veja mais</button>
+                </div>
             </div><!-- #economize-->
         </section>
         <section>
